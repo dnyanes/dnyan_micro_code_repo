@@ -39,7 +39,6 @@ public class UserController {
     //@Retry(name = "ratingHotelService", fallbackMethod = "ratingHotelFallback")
     @RateLimiter(name = "userRateLimiter", fallbackMethod = "ratingHotelFallback")
     public ResponseEntity<@NonNull User> saveUser(@PathVariable String userId){
-
         log.info("Get Single User Handler: UserController");
         log.info("Retry count: {}",retryCount);
         retryCount++;
